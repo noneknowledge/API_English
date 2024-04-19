@@ -410,3 +410,4 @@ D:\Code go here\API_English\EnglishAPI\obj\Debug\net8.0\refint\EnglishAPI.dll
 D:\Code go here\API_English\EnglishAPI\obj\Debug\net8.0\EnglishAPI.pdb
 D:\Code go here\API_English\EnglishAPI\obj\Debug\net8.0\EnglishAPI.genruntimeconfig.cache
 D:\Code go here\API_English\EnglishAPI\obj\Debug\net8.0\ref\EnglishAPI.dll
+D:\Desktop\EnglishAPI\EnglishAPI\EnglishAPI\obj\Debug\net8.0\EnglishAPI.sourcelink.json

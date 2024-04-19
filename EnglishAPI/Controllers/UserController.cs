@@ -32,14 +32,6 @@ namespace EnglishAPI.Controllers
         }
 
         [Authorize]
-        [HttpGet]
-        public IActionResult getLoginInfo()
-        {
-            var username = User.FindFirst("Username").Value;
-            return Ok(username);
-        }
-
-        [Authorize]
         [HttpGet("profile")]
         public async Task<IActionResult> getProfile()
         {
@@ -87,7 +79,7 @@ namespace EnglishAPI.Controllers
         public async Task<IActionResult> Login(LoginVM vm)
         {
            
-            var loginUser = await _ctx.Users.FirstOrDefaultAsync(a => a.UserName == vm.UserName);
+            var loginUser = await _ctx.Users.Include(a=>a.Avatar).FirstOrDefaultAsync(a => a.UserName == vm.UserName);
             if(loginUser != null && loginUser.Password == vm.Password.ToSHA512Hash(loginUser.RandomKey))
             {
                 var issuer = _config["Jwt:Issuer"];
@@ -112,7 +104,8 @@ namespace EnglishAPI.Controllers
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var jwtToken = tokenHandler.WriteToken(token);
                 var stringToken = tokenHandler.WriteToken(token);
-                return Ok(stringToken);
+                var tokenResponse = new TokenResponse() { avatarImage = loginUser.Avatar.Image, token = stringToken, userName =loginUser.UserName };
+                return Ok(tokenResponse);
                 //return Ok("login success");
             }
             return BadRequest("Sai tai khoan hoac mat khau");
