@@ -39,6 +39,31 @@ namespace EnglishAPI.Controllers
             return Ok(username);
         }
 
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> getProfile()
+        {
+            try
+            {
+                var currentId = User.FindFirst("Id").Value;
+                var profile = await _ctx.Users.FirstOrDefaultAsync(a => a.UserId.ToString() == currentId);
+                if (profile == null)
+                {
+                    return BadRequest("Please try again");
+                }
+                else
+                {
+                    return Ok(profile);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        
+
+        }
+
         [HttpPost("register")]
         public async Task<IActionResult> Register(User model)
         {
@@ -72,7 +97,7 @@ namespace EnglishAPI.Controllers
                 {
                     Subject = new ClaimsIdentity(new[]
                     {
-                new Claim("Id", Guid.NewGuid().ToString()),
+                new Claim("Id", loginUser.UserId.ToString()),
                 new Claim("Username", loginUser.UserName ),
                 new Claim("Fullname", loginUser.FullName )
             }),
