@@ -15,6 +15,10 @@ public partial class UserLession
 
     public string? Status { get; set; }
 
+    public DateOnly? CommentDate { get; set; }
+
+    public DateOnly? CompleteDate { get; set; }
+
     public virtual Lession Lession { get; set; } = null!;
 
     public virtual User User { get; set; } = null!;

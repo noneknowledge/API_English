@@ -1,8 +1,10 @@
 ﻿using EnglishAPI.Data;
 using EnglishAPI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.Intrinsics.X86;
 
 namespace EnglishAPI.Controllers
 {
@@ -17,22 +19,39 @@ namespace EnglishAPI.Controllers
             _ctx = ctx;
         }
 
-        [HttpPost]
+        [Authorize]
+        [HttpPut]
         public async Task<IActionResult> UpdateScore(UserLessionVM vm)
         {
-            var lession = await _ctx.UserLessions.FirstOrDefaultAsync(a=>a.UserId == vm.UID & a.LessionId == vm.LessionID);
-            if (lession == null)
-            {
-                lession = new UserLession()
+            var uidStr = User.FindFirst("Id").Value;
+            if (int.TryParse(uidStr, out var id)) {
+                var lession = await _ctx.UserLessions.FirstOrDefaultAsync(a => a.UserId == id && a.LessionId == vm.LessionID);
+                if (lession == null)
                 {
-                    UserId = vm.UID,
-                    LessionId = vm.LessionID,
-                    Comment = vm.Comment,
-                    HighScore = vm.Score,
-                };
-            }
+                    lession = new UserLession()
+                    {
+                        UserId = id,
+                        LessionId = vm.LessionID,
+                        HighScore = vm.Score,
+                        CompleteDate = DateOnly.FromDateTime(DateTime.Now)
+                    };
+                }
+                else
+                {
+                    if (lession.HighScore <= vm.Score)
+                    {
+                        lession.HighScore = vm.Score;
+                        lession.CompleteDate = DateOnly.FromDateTime(DateTime.Now);
+                    }
+                }
 
-            return Ok(lession);
+                return Ok(lession);
+            }
+            else
+            {
+                return BadRequest("Lỗi mã người dùng vui lòng đăng nhập lại hoặc thử lại sau");
+            }
+           
         }
     }
 }
