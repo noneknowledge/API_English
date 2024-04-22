@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Code go here\\API_English\\",
+  "WorkspaceRootPath": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\controllers\\lessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\controllers\\lessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\userscorevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\userscorevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\toprankvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\toprankvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\lessionoutlinevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\lessionoutlinevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\commentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\commentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\desktop\\englishapi\\englishapi\\englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +14,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserScoreVM.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\UserScoreVM.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\UserScoreVM.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\UserScoreVM.cs",
-              "RelativeToolTip": "EnglishAPI\\ViewModel\\UserScoreVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:45:00.826Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TopRankVM.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\TopRankVM.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\TopRankVM.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\TopRankVM.cs",
-              "RelativeToolTip": "EnglishAPI\\ViewModel\\TopRankVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:39:50.228Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:354128415:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CommentVM.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\CommentVM.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\CommentVM.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\CommentVM.cs",
-              "RelativeToolTip": "EnglishAPI\\ViewModel\\CommentVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:15:30.174Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LessionOutLineVM.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\LessionOutLineVM.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\LessionOutLineVM.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\LessionOutLineVM.cs",
-              "RelativeToolTip": "EnglishAPI\\ViewModel\\LessionOutLineVM.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAuwBEAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:12:43.619Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LessionController.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\LessionController.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\Controllers\\LessionController.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\LessionController.cs",
-              "RelativeToolTip": "EnglishAPI\\Controllers\\LessionController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAcwEMAAABCAAAA",
+              "Title": "UserLessionController.cs",
+              "DocumentMoniker": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "RelativeDocumentMoniker": "EnglishAPI\\Controllers\\UserLessionController.cs",
+              "ToolTip": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "RelativeToolTip": "EnglishAPI\\Controllers\\UserLessionController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T12:29:31.74Z",
+              "WhenOpened": "2024-04-22T12:03:15.638Z",
               "EditorCaption": ""
             }
           ]

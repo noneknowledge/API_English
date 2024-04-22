@@ -12,4 +12,8 @@ public partial class Grammar
     public string? Example { get; set; }
 
     public string? Note { get; set; }
+
+    public int? LessionId { get; set; }
+
+    public virtual Lession? Lession { get; set; }
 }

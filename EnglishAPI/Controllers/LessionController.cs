@@ -65,7 +65,11 @@ namespace EnglishAPI.Controllers
 
                         var uid = User.FindFirst("Id").Value;
                         var userStatus  = await _ctx.UserLessions.FirstOrDefaultAsync(a => a.LessionId == id && a.UserId.ToString() == uid);
-                        lessionOutLine.userScore = new UserScoreVM { completeDate = userStatus.CompleteDate , score=userStatus.HighScore};
+                        if (userStatus != null)
+                        {
+                            lessionOutLine.userScore = new UserScoreVM { completeDate = userStatus.CompleteDate, score = userStatus.HighScore };
+                        }
+                     
                         var preLessionId = _ctx.Lessions.Where(a => a.LessionId < id).OrderByDescending(a => a.LessionId).FirstOrDefault();
                         if (preLessionId == null)
                         {

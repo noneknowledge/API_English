@@ -15,6 +15,8 @@ public partial class Lession
 
     public string? Vietnamese { get; set; }
 
+    public virtual ICollection<Grammar> Grammars { get; set; } = new List<Grammar>();
+
     public virtual ICollection<Reading> Readings { get; set; } = new List<Reading>();
 
     public virtual ICollection<Sentence> Sentences { get; set; } = new List<Sentence>();

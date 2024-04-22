@@ -14,9 +14,30 @@ namespace EnglishAPI.Controllers
     {
         private readonly EnglishWebContext _ctx;
 
-        public UserLessionController(EnglishWebContext ctx) 
+        public UserLessionController(EnglishWebContext ctx)
         {
             _ctx = ctx;
+        }
+
+        [Authorize]
+        [HttpPut("comment")]
+        public async Task<IActionResult> UpdateComment(UserLessionVM vm)
+        {
+            var uid = User.FindFirst("Id").Value;
+
+            var userLession = await _ctx.UserLessions.FirstOrDefaultAsync(a => a.LessionId == vm.LessionID && a.UserId.ToString() == uid);
+            if (userLession == null)
+            {
+                return BadRequest("sai roi nha");
+            }
+            else
+            {
+                userLession.CommentDate = DateOnly.FromDateTime(DateTime.Now);
+                userLession.Comment = vm.Comment;
+                
+                return Ok("Ban da lam duoc");
+            }
+            
         }
 
         [Authorize]
