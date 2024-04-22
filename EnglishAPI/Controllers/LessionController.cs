@@ -49,29 +49,42 @@ namespace EnglishAPI.Controllers
                     lessionOutLine.Title = lession.Title;
                     lessionOutLine.Vietnamese = lession.Vietnamese;
                     lessionOutLine.Image = lession.Image;
-                    lessionOutLine.UserLessions = _ctx.UserLessions.Where(a=>a.LessionId == id).ToList();
+                    lessionOutLine.Comments = await _ctx.UserLessions.Where(a => a.LessionId == id).Select(a=> new CommentVM
+                    {
+                       userName = a.User.UserName,
+                       avatarImage = a.User.Avatar.Image,
+                       comment = a.Comment,
+                       commentDate = a.CommentDate,
+                    }).ToListAsync();
                     lessionOutLine.canTest = false;
                     lessionOutLine.canComment = false;
+                    lessionOutLine.topRank = await _ctx.UserLessions.OrderBy(a => a.HighScore).ThenBy(a => a.CompleteDate).Take(5).Select(a=>new TopRankVM{ avatarImage= a.User.Avatar.Image, completeDate = a.CompleteDate, score = a.HighScore, userName= a.User.UserName}).ToListAsync();
 
-                    if(User.Identity.IsAuthenticated)
+                    if (User.Identity.IsAuthenticated)
                     {
+
                         var uid = User.FindFirst("Id").Value;
-                        var preLession = _ctx.UserLessions.Where(a=>a.LessionId < id && a.UserId.ToString() == uid )
-                            .OrderByDescending(a=>a.LessionId).FirstOrDefault();
-                        if(preLession == null )
+                        var userStatus  = await _ctx.UserLessions.FirstOrDefaultAsync(a => a.LessionId == id && a.UserId.ToString() == uid);
+                        lessionOutLine.userScore = new UserScoreVM { completeDate = userStatus.CompleteDate , score=userStatus.HighScore};
+                        var preLessionId = _ctx.Lessions.Where(a => a.LessionId < id).OrderByDescending(a => a.LessionId).FirstOrDefault();
+                        if (preLessionId == null)
                         {
                             lessionOutLine.canTest = true;
                         }
                         else
                         {
-                            if(preLession.Status.ToLower() == "pass")
+                            var preLession = await _ctx.UserLessions
+                                .FirstOrDefaultAsync(a => a.LessionId == preLessionId.LessionId && a.UserId.ToString() == uid && a.Status.ToLower() == "pass");
+                            if (preLession != null)
                             {
                                 lessionOutLine.canTest = true;
                             }
                         }
+
                         var curULession = await _ctx.UserLessions
                             .FirstOrDefaultAsync(a => a.UserId.ToString() == uid && a.LessionId == id);
-                        if(curULession != null && curULession.Status.ToLower() == "pass"  )
+
+                        if (curULession != null && curULession.Status.ToLower() == "pass")
                         {
                             lessionOutLine.canComment = true;
                         }

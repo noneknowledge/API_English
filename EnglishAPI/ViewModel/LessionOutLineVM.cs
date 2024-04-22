@@ -11,9 +11,11 @@ namespace EnglishAPI.ViewModel
         public string? Description { get; set; }
         public string? Image { get; set; }
         public string? Vietnamese { get; set; }
-        public List<UserLession> UserLessions { get; set; }
+        public List<CommentVM> Comments { get; set; }
+        public List<TopRankVM> topRank {  get; set; }
         public bool canComment { get; set; }
         public bool canTest {  get; set; }
+        public UserScoreVM userScore { get; set; }
 
 
     }

@@ -33,8 +33,15 @@ namespace EnglishAPI.Controllers
                         UserId = id,
                         LessionId = vm.LessionID,
                         HighScore = vm.Score,
-                        CompleteDate = DateOnly.FromDateTime(DateTime.Now)
+                        CompleteDate = DateOnly.FromDateTime(DateTime.Now),
+                        Status = "fail"
                     };
+                    if(vm.Score > 1000)
+                    {
+                        lession.Status = "pass";
+                    }
+                    _ctx.Add(lession);
+                    await _ctx.SaveChangesAsync();
                 }
                 else
                 {
@@ -43,7 +50,9 @@ namespace EnglishAPI.Controllers
                         lession.HighScore = vm.Score;
                         lession.CompleteDate = DateOnly.FromDateTime(DateTime.Now);
                     }
+                    await _ctx.SaveChangesAsync();
                 }
+               
 
                 return Ok(lession);
             }
