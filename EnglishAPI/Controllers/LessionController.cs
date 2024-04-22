@@ -1,5 +1,7 @@
 ﻿using EnglishAPI.Data;
 using EnglishAPI.Services;
+using EnglishAPI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,16 +32,57 @@ namespace EnglishAPI.Controllers
             }
             
         }
-
+        
         [HttpGet("outline/{id}")]
         public async Task<IActionResult> GetLessionOutLine(int id)
         {
             try
             {
-     
+                
                 var lession = await _ctx.Lessions.FirstOrDefaultAsync(a => a.LessionId == id);
+                if(lession != null)
+                {
+                    var lessionOutLine = new LessionOutLineVM();
 
-                return Ok(lession); 
+                    lessionOutLine.LessionId = lession.LessionId;
+                    lessionOutLine.Description = lession.Description;
+                    lessionOutLine.Title = lession.Title;
+                    lessionOutLine.Vietnamese = lession.Vietnamese;
+                    lessionOutLine.Image = lession.Image;
+                    lessionOutLine.UserLessions = _ctx.UserLessions.Where(a=>a.LessionId == id).ToList();
+                    lessionOutLine.canTest = false;
+                    lessionOutLine.canComment = false;
+
+                    if(User.Identity.IsAuthenticated)
+                    {
+                        var uid = User.FindFirst("Id").Value;
+                        var preLession = _ctx.UserLessions.Where(a=>a.LessionId < id && a.UserId.ToString() == uid )
+                            .OrderByDescending(a=>a.LessionId).FirstOrDefault();
+                        if(preLession == null )
+                        {
+                            lessionOutLine.canTest = true;
+                        }
+                        else
+                        {
+                            if(preLession.Status.ToLower() == "pass")
+                            {
+                                lessionOutLine.canTest = true;
+                            }
+                        }
+                        var curULession = await _ctx.UserLessions
+                            .FirstOrDefaultAsync(a => a.UserId.ToString() == uid && a.LessionId == id);
+                        if(curULession != null && curULession.Status.ToLower() == "pass"  )
+                        {
+                            lessionOutLine.canComment = true;
+                        }
+                    }
+                    return Ok(lessionOutLine);
+                }
+                else
+                {
+                    return BadRequest("Không tìm thấy lession này");
+                }
+                
             }
             catch (Exception e ) 
             {

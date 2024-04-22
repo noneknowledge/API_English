@@ -14,18 +14,6 @@ namespace EnglishAPI.Services
 
             return sb.ToString();
         }
-        public static List<T> ShuffleList<T>(List<T> lst)
-        { 
-            Random rand = new Random();
-
-            for (int i =  - 1; i > 0; i--)
-            {
-                int j = rand.Next(i + 1);
-                var temp = lst[i];
-                lst[i] = lst[j];
-                lst[j] = temp;
-            }
-            return lst;
-        }
+        
     }
 }

@@ -17,6 +17,8 @@ public partial class EnglishWebContext : DbContext
 
     public virtual DbSet<Avatar> Avatars { get; set; }
 
+    public virtual DbSet<Grammar> Grammars { get; set; }
+
     public virtual DbSet<Lession> Lessions { get; set; }
 
     public virtual DbSet<Reading> Readings { get; set; }
@@ -31,7 +33,7 @@ public partial class EnglishWebContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-B0GT31Q\\MSSQLServer1; Database=EnglishWeb;Integrated Security=True;Encrypt=false");
+        => optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS; Database=EnglishWeb;Integrated Security=True;Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,6 +44,18 @@ public partial class EnglishWebContext : DbContext
             entity.Property(e => e.AvatarId).HasColumnName("AvatarID");
             entity.Property(e => e.Description).HasMaxLength(255);
             entity.Property(e => e.Image).HasMaxLength(255);
+        });
+
+        modelBuilder.Entity<Grammar>(entity =>
+        {
+            entity.ToTable("Grammar");
+
+            entity.Property(e => e.GrammarId).HasColumnName("GrammarID");
+            entity.Property(e => e.Example)
+                .HasMaxLength(10)
+                .IsFixedLength();
+            entity.Property(e => e.Formula).HasMaxLength(255);
+            entity.Property(e => e.Note).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Lession>(entity =>
