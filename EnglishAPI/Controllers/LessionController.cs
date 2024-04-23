@@ -49,7 +49,7 @@ namespace EnglishAPI.Controllers
                     lessionOutLine.Title = lession.Title;
                     lessionOutLine.Vietnamese = lession.Vietnamese;
                     lessionOutLine.Image = lession.Image;
-                    lessionOutLine.Comments = await _ctx.UserLessions.Where(a => a.LessionId == id).Select(a=> new CommentVM
+                    lessionOutLine.Comments = await _ctx.UserLessions.Where(a => a.LessionId == id && a.Comment!.Length >0 ).Select(a=> new CommentVM
                     {
                        userName = a.User.UserName,
                        avatarImage = a.User.Avatar.Image,
@@ -58,7 +58,7 @@ namespace EnglishAPI.Controllers
                     }).ToListAsync();
                     lessionOutLine.canTest = false;
                     lessionOutLine.canComment = false;
-                    lessionOutLine.topRank = await _ctx.UserLessions.OrderBy(a => a.HighScore).ThenBy(a => a.CompleteDate).Take(5).Select(a=>new TopRankVM{ avatarImage= a.User.Avatar.Image, completeDate = a.CompleteDate, score = a.HighScore, userName= a.User.UserName}).ToListAsync();
+                    lessionOutLine.topRank = await _ctx.UserLessions.Where(a=>a.LessionId == id).OrderByDescending(a => a.HighScore).ThenBy(a => a.CompleteDate).Take(5).Select(a=>new TopRankVM{ avatarImage= a.User.Avatar.Image, completeDate = a.CompleteDate, score = a.HighScore, userName= a.User.UserName}).ToListAsync();
 
                     if (User.Identity.IsAuthenticated)
                     {
@@ -107,6 +107,7 @@ namespace EnglishAPI.Controllers
             }
         }
 
+
         [HttpGet("instruction/{id}")]
         public async Task<IActionResult> GetLessionInstrucstion(int id)
         {
@@ -122,6 +123,7 @@ namespace EnglishAPI.Controllers
                 return BadRequest(e.Message);
             }
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetLession(int id)

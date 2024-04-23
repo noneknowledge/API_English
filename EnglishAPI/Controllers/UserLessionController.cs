@@ -34,8 +34,11 @@ namespace EnglishAPI.Controllers
             {
                 userLession.CommentDate = DateOnly.FromDateTime(DateTime.Now);
                 userLession.Comment = vm.Comment;
+
+                _ctx.Update(userLession);
+                await _ctx.SaveChangesAsync();
                 
-                return Ok("Ban da lam duoc");
+                return Ok();
             }
             
         }
@@ -57,7 +60,7 @@ namespace EnglishAPI.Controllers
                         CompleteDate = DateOnly.FromDateTime(DateTime.Now),
                         Status = "fail"
                     };
-                    if(vm.Score > 1000)
+                    if(vm.Score >= 1000)
                     {
                         lession.Status = "pass";
                     }
@@ -68,6 +71,10 @@ namespace EnglishAPI.Controllers
                 {
                     if (lession.HighScore <= vm.Score)
                     {
+                        if(vm.Score >= 1000)
+                        {
+                            lession.Status = "pass";
+                        }
                         lession.HighScore = vm.Score;
                         lession.CompleteDate = DateOnly.FromDateTime(DateTime.Now);
                     }
