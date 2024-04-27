@@ -32,6 +32,8 @@ namespace EnglishAPI.Controllers
             }
             
         }
+
+        
         
         [HttpGet("outline/{id}")]
         public async Task<IActionResult> GetLessionOutLine(int id)
@@ -113,10 +115,28 @@ namespace EnglishAPI.Controllers
         {
             try
             {
-
-                var lession = await _ctx.Lessions.FirstOrDefaultAsync(a => a.LessionId == id);
-
-                return Ok(lession);
+                var response = new LessionInstructionVM();
+                response.title = _ctx.Lessions.FirstOrDefault(a => a.LessionId == id)!.Title;
+                
+                var rawVocabs = await _ctx.Vocabularies.Where(a => a.LessionId == id).ToListAsync();
+                var rawGrammars = await _ctx.Grammars.Where(a => a.LessionId == id).ToListAsync(); ;
+                if (rawVocabs != null)
+                {
+                    var vocabularies = rawVocabs.Select(a => new VocabVM (){Vietnamese=a.Vietnamese, LessionId = a.LessionId
+                        , Image=a.Image, Vocab=a.Vocab, VocabId=a.VocabId, WordClass = a.WordClass
+                    }).ToList();
+                    response.vocabularies = vocabularies;
+                    
+                    
+                }
+                if (rawGrammars != null)
+                {
+                    var grammars = rawGrammars.Select(a => new GrammarVM() { LessionId=a.LessionId, Example=a.Example
+                    , Formula=a.Formula, Note = a.Note, GrammarId = a.GrammarId}).ToList();
+                    response.grammars = grammars;
+                }
+   
+                return Ok(response);
             }
             catch (Exception e)
             {

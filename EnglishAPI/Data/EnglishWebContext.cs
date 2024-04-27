@@ -29,6 +29,8 @@ public partial class EnglishWebContext : DbContext
 
     public virtual DbSet<UserLession> UserLessions { get; set; }
 
+    public virtual DbSet<UserProgress> UserProgresses { get; set; }
+
     public virtual DbSet<Vocabulary> Vocabularies { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -155,6 +157,13 @@ public partial class EnglishWebContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserLession_User");
+        });
+
+        modelBuilder.Entity<UserProgress>(entity =>
+        {
+            entity.ToTable("UserProgress");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
         });
 
         modelBuilder.Entity<Vocabulary>(entity =>
