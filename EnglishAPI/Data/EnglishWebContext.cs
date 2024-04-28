@@ -164,6 +164,22 @@ public partial class EnglishWebContext : DbContext
             entity.ToTable("UserProgress");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.AdditionalAnswer)
+                .HasMaxLength(20)
+                .HasColumnName("additionalAnswer");
+            entity.Property(e => e.IsTrue).HasMaxLength(20);
+
+            entity.HasOne(d => d.Reading).WithMany(p => p.UserProgresses)
+                .HasForeignKey(d => d.ReadingId)
+                .HasConstraintName("FK_UserProgress_Reading");
+
+            entity.HasOne(d => d.Sentence).WithMany(p => p.UserProgresses)
+                .HasForeignKey(d => d.SentenceId)
+                .HasConstraintName("FK_UserProgress_Sentence");
+
+            entity.HasOne(d => d.Vocab).WithMany(p => p.UserProgresses)
+                .HasForeignKey(d => d.VocabId)
+                .HasConstraintName("FK_UserProgress_Vocabulary");
         });
 
         modelBuilder.Entity<Vocabulary>(entity =>

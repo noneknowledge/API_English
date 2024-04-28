@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Code go here\\API_English\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\lessioninstructionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\lessioninstructionvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\controllers\\lessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LessionInstructionVM.cs",
-              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\LessionInstructionVM.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\LessionInstructionVM.cs",
-              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\LessionInstructionVM.cs",
-              "RelativeToolTip": "EnglishAPI\\ViewModel\\LessionInstructionVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T07:41:51.958Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -41,9 +28,22 @@
               "RelativeDocumentMoniker": "EnglishAPI\\Controllers\\LessionController.cs",
               "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\LessionController.cs",
               "RelativeToolTip": "EnglishAPI\\Controllers\\LessionController.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAcwIcAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T07:37:45.756Z",
+              "WhenOpened": "2024-04-28T05:28:29.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserLessionController.cs",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "RelativeDocumentMoniker": "EnglishAPI\\Controllers\\UserLessionController.cs",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "RelativeToolTip": "EnglishAPI\\Controllers\\UserLessionController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAswHQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T05:05:48.096Z",
               "EditorCaption": ""
             }
           ]

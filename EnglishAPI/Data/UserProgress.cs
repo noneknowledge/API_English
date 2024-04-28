@@ -14,4 +14,14 @@ public partial class UserProgress
     public int? SentenceId { get; set; }
 
     public int? ReadingId { get; set; }
+
+    public string? IsTrue { get; set; }
+
+    public string? AdditionalAnswer { get; set; }
+
+    public virtual Reading? Reading { get; set; }
+
+    public virtual Sentence? Sentence { get; set; }
+
+    public virtual Vocabulary? Vocab { get; set; }
 }

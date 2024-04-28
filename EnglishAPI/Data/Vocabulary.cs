@@ -18,4 +18,6 @@ public partial class Vocabulary
     public string? WordClass { get; set; }
 
     public virtual Lession? Lession { get; set; }
+
+    public virtual ICollection<UserProgress> UserProgresses { get; set; } = new List<UserProgress>();
 }
