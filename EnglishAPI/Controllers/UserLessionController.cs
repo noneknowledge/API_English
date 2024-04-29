@@ -42,6 +42,28 @@ namespace EnglishAPI.Controllers
             }
         }
 
+        [HttpGet("testoutline/{lessionId}")]
+        public async Task<IActionResult> GetTestOutline(int lessionId)
+        {
+            var uid = User.FindFirst("Id").Value;
+            var response = new TestOutLineVm();
+            var doneVocab = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Vocab!.LessionId == lessionId).Count();
+            var doneSentence = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Sentence!.LessionId == lessionId).Count();
+            var doneReading = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Reading!.LessionId == lessionId).Count();
+
+            var totalVocab = _ctx.Vocabularies.Where(a => a.LessionId == lessionId).Count();
+            var totalSentence = _ctx.Sentences.Where(a=>a.LessionId == lessionId).Count();
+            var totalReading = _ctx.Readings.Where(a => a.LessionId == lessionId).Count();
+
+            response.doneReading = doneReading;
+            response.doneSentence = doneSentence;
+            response.doneVocab = doneVocab;
+            response.totalVocab = totalVocab;
+            response.totalReading=totalReading;
+            response.totalSentence = totalSentence;
+            return Ok(response);
+        }
+
         [HttpGet("vocab/{lessionId}/{state}")]
         public async Task<IActionResult> GetVocab(int lessionId,string state)
         {
@@ -61,8 +83,8 @@ namespace EnglishAPI.Controllers
             if (state == "keep")
             {
                 var uid = User.FindFirst("Id").Value;
-                var doneVocab = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Sentence!.LessionId == lessionId).Count();
-                var leftOver = _ctx.Sentences.Where(a => a.LessionId == lessionId).Skip(doneVocab);
+                var doneSentence = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Sentence!.LessionId == lessionId).Count();
+                var leftOver = _ctx.Sentences.Where(a => a.LessionId == lessionId).Skip(doneSentence);
                 return Ok(leftOver);
             }
             return Ok();
@@ -74,8 +96,8 @@ namespace EnglishAPI.Controllers
             if (state == "keep")
             {
                 var uid = User.FindFirst("Id").Value;
-                var doneVocab = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Reading!.LessionId == lessionId).Count();
-                var leftOver = _ctx.Readings.Where(a => a.LessionId == lessionId).Skip(doneVocab);
+                var doneReading = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Reading!.LessionId == lessionId).Count();
+                var leftOver = _ctx.Readings.Where(a => a.LessionId == lessionId).Skip(doneReading);
                 return Ok(leftOver);
             }
             return Ok();
@@ -86,10 +108,10 @@ namespace EnglishAPI.Controllers
         public async Task<IActionResult> UpdateVocab(UpdateSpecificVM parameters)
         {
             var uid = int.Parse(User.FindFirst("Id").Value);
-            var vocab = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.vocabId);
+            var vocab = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.quesId);
             if (vocab == null) return BadRequest();
             
-            var UserVocab = new UserProgress() { IsTrue =  parameters.isTrue, VocabId= parameters.vocabId,UserId = uid };
+            var UserVocab = new UserProgress() { IsTrue =  parameters.isTrue, VocabId= parameters.quesId,UserId = uid };
             _ctx.Add(UserVocab);
             await _ctx.SaveChangesAsync();
             return Created();
@@ -99,10 +121,10 @@ namespace EnglishAPI.Controllers
         public async Task<IActionResult> UpdateSentence(UpdateSpecificVM parameters)
         {
             var uid = int.Parse(User.FindFirst("Id").Value);
-            var sentence = await _ctx.Sentences.FirstOrDefaultAsync(a => a.SenId == parameters.vocabId);
+            var sentence = await _ctx.Sentences.FirstOrDefaultAsync(a => a.SenId == parameters.quesId);
             if (sentence == null) return BadRequest();
 
-            var UserSen = new UserProgress() { IsTrue = parameters.isTrue, SentenceId = parameters.vocabId, UserId = uid };
+            var UserSen = new UserProgress() { IsTrue = parameters.isTrue, SentenceId = parameters.quesId, UserId = uid };
             _ctx.Add(UserSen);
             await _ctx.SaveChangesAsync();
             return Created();
@@ -112,10 +134,10 @@ namespace EnglishAPI.Controllers
         public async Task<IActionResult> UpdateReading(UpdateSpecificVM parameters)
         {
             var uid = int.Parse(User.FindFirst("Id").Value);
-            var reading = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.vocabId);
+            var reading = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.quesId);
             if (reading == null) return BadRequest();
 
-            var UserReading = new UserProgress() { IsTrue = parameters.isTrue, ReadingId = parameters.vocabId, UserId = uid,AdditionalAnswer=parameters.additional };
+            var UserReading = new UserProgress() { IsTrue = parameters.isTrue, ReadingId = parameters.quesId, UserId = uid,AdditionalAnswer=parameters.additional };
             _ctx.Add(UserReading);
             await _ctx.SaveChangesAsync();
             return Created();
@@ -174,6 +196,6 @@ namespace EnglishAPI.Controllers
 public sealed class UpdateSpecificVM
 {
    public string isTrue {  get; set; }
-    public int vocabId { get; set; }
-    public string additional { get; set; }
+    public int quesId { get; set; }
+    public string? additional { get; set; } 
 }
