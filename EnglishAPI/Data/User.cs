@@ -26,4 +26,6 @@ public partial class User
     public virtual Avatar? Avatar { get; set; }
 
     public virtual ICollection<UserLession> UserLessions { get; set; } = new List<UserLession>();
+
+    public virtual ICollection<UserProgress> UserProgresses { get; set; } = new List<UserProgress>();
 }

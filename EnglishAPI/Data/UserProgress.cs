@@ -23,5 +23,7 @@ public partial class UserProgress
 
     public virtual Sentence? Sentence { get; set; }
 
+    public virtual User User { get; set; } = null!;
+
     public virtual Vocabulary? Vocab { get; set; }
 }

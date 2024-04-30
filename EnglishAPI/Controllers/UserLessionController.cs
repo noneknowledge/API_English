@@ -137,7 +137,7 @@ namespace EnglishAPI.Controllers
             var reading = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.quesId);
             if (reading == null) return BadRequest();
 
-            var UserReading = new UserProgress() { IsTrue = parameters.isTrue, ReadingId = parameters.quesId, UserId = uid,AdditionalAnswer=parameters.additional };
+            var UserReading = new UserProgress() { IsTrue = parameters.isTrue, ReadingId = parameters.quesId, UserId = uid, AdditionalAnswer = parameters.additional };
             _ctx.Add(UserReading);
             await _ctx.SaveChangesAsync();
             return Created();
