@@ -67,40 +67,65 @@ namespace EnglishAPI.Controllers
         [HttpGet("vocab/{lessionId}/{state}")]
         public async Task<IActionResult> GetVocab(int lessionId,string state)
         {
+            var uid = User.FindFirst("Id").Value;
+            var doneVocab = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Vocab!.LessionId == lessionId);
             if (state == "keep")
             {
-                var uid = User.FindFirst("Id").Value;
-                var doneVocab = _ctx.UserProgresses.Where(a=>a.UserId.ToString() == uid && a.Vocab!.LessionId == lessionId).Count();
-                var leftOver = _ctx.Vocabularies.Where(a => a.LessionId == lessionId).Skip(doneVocab);
+                
+      
+                var leftOver = _ctx.Vocabularies.Where(a => a.LessionId == lessionId).Skip(doneVocab.Count());
                 return Ok(leftOver);
             }
-            return Ok();
+            else
+            {
+                _ctx.RemoveRange(doneVocab);
+                await _ctx.SaveChangesAsync();
+                var leftOver = _ctx.Vocabularies.Where(a => a.LessionId == lessionId);
+                return Ok(leftOver);
+            }
+           
         }
 
         [HttpGet("sentence/{lessionId}/{state}")]
         public async Task<IActionResult> GetSentence(int lessionId, string state)
         {
+            var uid = User.FindFirst("Id").Value;
+            var doneSentence = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Sentence!.LessionId == lessionId);
             if (state == "keep")
             {
-                var uid = User.FindFirst("Id").Value;
-                var doneSentence = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Sentence!.LessionId == lessionId).Count();
-                var leftOver = _ctx.Sentences.Where(a => a.LessionId == lessionId).Skip(doneSentence);
+               
+                var leftOver = _ctx.Sentences.Where(a => a.LessionId == lessionId).Skip(doneSentence.Count());
                 return Ok(leftOver);
             }
-            return Ok();
+            else
+            {
+                _ctx.RemoveRange(doneSentence);
+                await _ctx.SaveChangesAsync();
+                var leftOver = _ctx.Sentences.Where(a => a.LessionId == lessionId);
+                return Ok(leftOver);
+            }
+           
         }
 
         [HttpGet("reading/{lessionId}/{state}")]
         public async Task<IActionResult> GetReading(int lessionId, string state)
         {
+            var uid = User.FindFirst("Id").Value;
+            var doneReading = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Reading!.LessionId == lessionId);
             if (state == "keep")
             {
-                var uid = User.FindFirst("Id").Value;
-                var doneReading = _ctx.UserProgresses.Where(a => a.UserId.ToString() == uid && a.Reading!.LessionId == lessionId).Count();
-                var leftOver = _ctx.Readings.Where(a => a.LessionId == lessionId).Skip(doneReading);
+                
+                var leftOver = _ctx.Readings.Where(a => a.LessionId == lessionId).Skip(doneReading.Count());
                 return Ok(leftOver);
             }
-            return Ok();
+            else
+            {
+                _ctx.RemoveRange(doneReading);
+                await _ctx.SaveChangesAsync();
+                var leftOver = _ctx.Readings.Where(a => a.LessionId == lessionId);
+                return Ok(leftOver);
+            }
+       
         }
 
 
@@ -134,7 +159,7 @@ namespace EnglishAPI.Controllers
         public async Task<IActionResult> UpdateReading(UpdateSpecificVM parameters)
         {
             var uid = int.Parse(User.FindFirst("Id").Value);
-            var reading = await _ctx.Vocabularies.FirstOrDefaultAsync(a => a.VocabId == parameters.quesId);
+            var reading = await _ctx.Readings.FirstOrDefaultAsync(a => a.ReadId == parameters.quesId);
             if (reading == null) return BadRequest();
 
             var UserReading = new UserProgress() { IsTrue = parameters.isTrue, ReadingId = parameters.quesId, UserId = uid, AdditionalAnswer = parameters.additional };

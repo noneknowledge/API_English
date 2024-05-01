@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\",
+  "WorkspaceRootPath": "D:\\Code go here\\API_English\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\desktop\\englishapi\\englishapi\\englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\controllers\\userlessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\desktop\\englishapi\\englishapi\\englishapi\\data\\userprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\data\\userprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\desktop\\englishapi\\englishapi\\englishapi\\data\\englishwebcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\data\\englishwebcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\data\\englishwebcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\desktop\\englishapi\\englishapi\\englishapi\\viewmodel\\testoutlinevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\data\\userprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\data\\userprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|d:\\code go here\\api_english\\englishapi\\viewmodel\\testoutlinevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F83994BD-1767-42C1-8014-DDE99DE9E609}|EnglishAPI\\EnglishAPI.csproj|solutionrelative:englishapi\\viewmodel\\testoutlinevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,55 +30,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:354128415:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EnglishWebContext.cs",
-              "DocumentMoniker": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Data\\EnglishWebContext.cs",
-              "RelativeDocumentMoniker": "EnglishAPI\\Data\\EnglishWebContext.cs",
-              "ToolTip": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Data\\EnglishWebContext.cs",
-              "RelativeToolTip": "EnglishAPI\\Data\\EnglishWebContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T11:38:41.573Z"
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EnglishAPI\\appsettings.json",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\appsettings.json",
+              "RelativeToolTip": "EnglishAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-01T07:29:55.311Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EnglishWebContext.cs",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\Data\\EnglishWebContext.cs",
+              "RelativeDocumentMoniker": "EnglishAPI\\Data\\EnglishWebContext.cs",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Data\\EnglishWebContext.cs",
+              "RelativeToolTip": "EnglishAPI\\Data\\EnglishWebContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T11:38:41.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserProgress.cs",
-              "DocumentMoniker": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Data\\UserProgress.cs",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\Data\\UserProgress.cs",
               "RelativeDocumentMoniker": "EnglishAPI\\Data\\UserProgress.cs",
-              "ToolTip": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Data\\UserProgress.cs",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Data\\UserProgress.cs",
               "RelativeToolTip": "EnglishAPI\\Data\\UserProgress.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -82,11 +72,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TestOutLineVm.cs",
-              "DocumentMoniker": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\ViewModel\\TestOutLineVm.cs",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\TestOutLineVm.cs",
               "RelativeDocumentMoniker": "EnglishAPI\\ViewModel\\TestOutLineVm.cs",
-              "ToolTip": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\ViewModel\\TestOutLineVm.cs",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\ViewModel\\TestOutLineVm.cs",
               "RelativeToolTip": "EnglishAPI\\ViewModel\\TestOutLineVm.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -96,11 +86,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserLessionController.cs",
-              "DocumentMoniker": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "DocumentMoniker": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\UserLessionController.cs",
               "RelativeDocumentMoniker": "EnglishAPI\\Controllers\\UserLessionController.cs",
-              "ToolTip": "D:\\Desktop\\EnglishAPI\\EnglishAPI\\EnglishAPI\\Controllers\\UserLessionController.cs",
+              "ToolTip": "D:\\Code go here\\API_English\\EnglishAPI\\Controllers\\UserLessionController.cs",
               "RelativeToolTip": "EnglishAPI\\Controllers\\UserLessionController.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAArwGwAAAAJAAAA",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAnwJ8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-28T05:05:48.096Z",
               "EditorCaption": ""
